@@ -39,6 +39,7 @@ class ClickMouse(threading.Thread):
 
     def exit(self):
         self.stop_clicking()
+        print("kill")
         self.program_running = False
 
     # method to check and run loop until
