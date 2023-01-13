@@ -9,8 +9,8 @@ from pynput.keyboard import Listener, KeyCode
 
 # four variables are created to
 # control the auto-clicker
-delay = 0.025
-delay = 0.0009
+delay = 0.025  # Default
+delay = 0.0009  # Max speed (for me at least)
 button = Button.left
 start_stop_key = KeyCode(char='k')
 stop_key = KeyCode(char='x')
@@ -31,9 +31,11 @@ class ClickMouse(threading.Thread):
 
     def start_clicking(self):
         self.running = True
+        print("start")
 
     def stop_clicking(self):
         self.running = False
+        print("stop")
 
     def exit(self):
         self.stop_clicking()
